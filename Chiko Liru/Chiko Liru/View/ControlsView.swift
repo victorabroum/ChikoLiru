@@ -23,16 +23,18 @@ struct ControlsView: View {
             HStack {
                 HStack {
                     InputButton(systemName: "arrow.left.circle.fill", action: {
-                        self.gameScene?.direction = .right
+                        self.gameScene?.direction = .left
                     }) {
-                        print("SOLTOU")
+                        self.gameScene?.direction = .none
                     }
 
                     Spacer()
                         .frame(width: 50.0)
                     InputButton(systemName: "arrow.right.circle.fill", action: {
                         self.gameScene?.direction = .right
-                    })
+                    }) {
+                        self.gameScene?.direction = .none
+                    }
                 }
                 Spacer()
                 InputButton(systemName: "a.circle.fill", action: {

@@ -16,6 +16,7 @@ struct InputButton: View {
         self.size = size
         self.systemName = systemName
         self.action = action
+        self.onTouchEnded = onTouchEnded
     }
     
     var size: (CGSize)
@@ -35,7 +36,6 @@ struct InputButton: View {
         }).pressAction {
             self.action?()
         } onTouchEnded: {
-            print("Soltou me")
             self.onTouchEnded?()
         }
 

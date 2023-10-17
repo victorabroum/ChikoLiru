@@ -31,4 +31,10 @@ public class SKEntityManager {
         }
         
     }
+    
+    public func update(time: TimeInterval) {
+        for entity in entities {
+            entity.update(deltaTime: time)
+        }
+    }
 }

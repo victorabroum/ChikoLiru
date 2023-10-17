@@ -14,6 +14,11 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: JumpComponent.self)
     }
     
+    public weak var moveComponent: MovementComponent? {
+        print("EITA FERRO")
+        return self.component(ofType: MovementComponent.self)
+    }
+    
     public init(position: CGPoint) {
         super.init()
         
@@ -25,6 +30,7 @@ public class PlayerEntity: GKEntity {
 
         // Physics
         let body = SKPhysicsBody(circleOfRadius: size.width/2)
+        body.allowsRotation = false
         self.addComponent(PhysicsComponent(body: body))
         
         let machineComp = StateMachineComponent(machine: .init(states: [
@@ -35,6 +41,8 @@ public class PlayerEntity: GKEntity {
         self.addComponent(machineComp)
         
         self.addComponent(JumpComponent(force: 12))
+        
+        self.addComponent(MovementComponent(speed: 75))
 
     }
     
