@@ -18,7 +18,7 @@ struct ContentView: View {
         ZStack {
             SpriteView(scene: gameScene, debugOptions: [.showsPhysics])
                 .ignoresSafeArea()
-            ControlsView(gameScene: gameScene)
+            ControlsView(playerInput: gameScene)
         }
     }
 }

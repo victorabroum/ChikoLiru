@@ -9,12 +9,10 @@ import Foundation
 import SpriteKit
 
 public class GameScene: SKScene, PlayerInputDelegate {
-    
-    var direction: MoveDirection = .none {
-        didSet {
-            self.player?.moveComponent?.direciton = direction
-        }
+    func change(direction: MoveDirection) {
+        self.player?.moveComponent?.direciton = direction
     }
+    
 
     public var entityManager: SKEntityManager?
     

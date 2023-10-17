@@ -28,7 +28,6 @@ public class JumpComponent: GKComponent {
     }
     
     public func jump() {
-        print("JUMP BRO")
         body?.applyImpulse(.init(dx: 0, dy: force))
     }
     

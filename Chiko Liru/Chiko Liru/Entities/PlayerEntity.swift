@@ -42,8 +42,10 @@ public class PlayerEntity: GKEntity {
         
         self.addComponent(JumpComponent(force: 12))
         
-        self.addComponent(MovementComponent(speed: 75))
+        let animationComp = AnimationComponent(idleState: PlayerIdle.self, walkState: PlayerWalk.self)
+        self.addComponent(animationComp)
 
+        self.addComponent(MovementComponent(speed: 75))
     }
     
     required init?(coder: NSCoder) {

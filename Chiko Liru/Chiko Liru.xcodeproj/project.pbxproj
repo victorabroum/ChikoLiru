@@ -26,6 +26,7 @@
 		760CE90C2ADEAA0E00F3749D /* PressAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CE90B2ADEAA0E00F3749D /* PressAction.swift */; };
 		760CE90E2ADEAB2400F3749D /* View+PressModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CE90D2ADEAB2400F3749D /* View+PressModifier.swift */; };
 		760CE9102ADEB0E600F3749D /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CE90F2ADEB0E600F3749D /* MovementComponent.swift */; };
+		766BAE912ADF078500AC3878 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE902ADF078500AC3878 /* AnimationComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		760CE90B2ADEAA0E00F3749D /* PressAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressAction.swift; sourceTree = "<group>"; };
 		760CE90D2ADEAB2400F3749D /* View+PressModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PressModifier.swift"; sourceTree = "<group>"; };
 		760CE90F2ADEB0E600F3749D /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
+		766BAE902ADF078500AC3878 /* AnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				760CE8FA2ADDC1D600F3749D /* PhysicsComponent.swift */,
 				760CE8FC2ADDC28C00F3749D /* JumpComponent.swift */,
 				760CE90F2ADEB0E600F3749D /* MovementComponent.swift */,
+				766BAE902ADF078500AC3878 /* AnimationComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				760CE9092ADEA7F600F3749D /* InputButton.swift in Sources */,
 				760CE9042ADEA0C600F3749D /* PlayerInput.swift in Sources */,
 				760CE8FB2ADDC1D600F3749D /* PhysicsComponent.swift in Sources */,
+				766BAE912ADF078500AC3878 /* AnimationComponent.swift in Sources */,
 				760CE8FD2ADDC28C00F3749D /* JumpComponent.swift in Sources */,
 				760CE8F42ADDBEFD00F3749D /* PlayerEntity.swift in Sources */,
 				760CE8F22ADDBE0500F3749D /* SKEntityManager.swift in Sources */,

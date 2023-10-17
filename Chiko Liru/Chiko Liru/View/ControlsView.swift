@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ControlsView: View {
     
-    init(gameScene: GameScene? = nil) {
-        self.gameScene = gameScene
+    init(playerInput: PlayerInputDelegate? = nil) {
+        self.playerInput = playerInput
     }
     
-    var gameScene: GameScene?
+    var playerInput: PlayerInputDelegate?
     
     private var buttonSize: (width: CGFloat, height: CGFloat) = (60, 60)
     
@@ -23,22 +23,22 @@ struct ControlsView: View {
             HStack {
                 HStack {
                     InputButton(systemName: "arrow.left.circle.fill", action: {
-                        self.gameScene?.direction = .left
+                        self.playerInput?.change(direction: .left)
                     }) {
-                        self.gameScene?.direction = .none
+                        self.playerInput?.change(direction: .none)
                     }
 
                     Spacer()
                         .frame(width: 50.0)
                     InputButton(systemName: "arrow.right.circle.fill", action: {
-                        self.gameScene?.direction = .right
+                        self.playerInput?.change(direction: .right)
                     }) {
-                        self.gameScene?.direction = .none
+                        self.playerInput?.change(direction: .none)
                     }
                 }
                 Spacer()
                 InputButton(systemName: "a.circle.fill", action: {
-                    gameScene?.doJump()
+                    playerInput?.doJump()
                 })
                 .padding()
             }

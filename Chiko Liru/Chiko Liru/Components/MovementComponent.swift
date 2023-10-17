@@ -26,18 +26,23 @@ public class MovementComponent: GKComponent {
     
     private weak var node: SKNode?
     private weak var physicsComp: PhysicsComponent?
+    private weak var animComp: AnimationComponent?
     private var velocity: CGVector = .zero
     
     public override func didAddToEntity() {
         node = entity?.component(ofType: GKSKNodeComponent.self)?.node
         physicsComp = entity?.component(ofType: PhysicsComponent.self)
+        animComp = entity?.component(ofType: AnimationComponent.self)
     }
     
     public override func update(deltaTime seconds: TimeInterval) {
         guard direciton != .none else {
             physicsComp?.body.velocity.dx = 0
+            animComp?.playIdleAnim()
             return
         }
+        
+        animComp?.playWalkAnim()
         
         if direciton == .left {
             velocity.dx = -1 * speed

@@ -12,6 +12,6 @@ public enum MoveDirection {
 }
 
 protocol PlayerInputDelegate {
-    var direction: MoveDirection { get set }
+    func change(direction: MoveDirection)
     func doJump()
 }
