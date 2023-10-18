@@ -15,7 +15,6 @@ public class PlayerEntity: GKEntity {
     }
     
     public weak var moveComponent: MovementComponent? {
-        print("EITA FERRO")
         return self.component(ofType: MovementComponent.self)
     }
     

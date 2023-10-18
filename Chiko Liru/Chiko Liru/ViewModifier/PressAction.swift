@@ -23,5 +23,6 @@ struct PressAction: ViewModifier {
                         onTouchEnded()
                     })
             )
+            .defersSystemGestures(on: .all)
     }
 }

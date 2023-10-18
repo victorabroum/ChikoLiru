@@ -21,6 +21,8 @@ public class GroundEntity: GKEntity {
         body.pinned = true
         body.allowsRotation = false
         self.addComponent(PhysicsComponent(body: body))
+        
+        self.addComponent(IsGroundComponent())
     }
     
     required init?(coder: NSCoder) {
