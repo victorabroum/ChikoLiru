@@ -13,34 +13,7 @@ enum TileType: Int {
 }
 
 extension SKTileMapNode {
-    
-    func addPhysicsToTileMap(){
-        for row in 0..<self.numberOfRows {
-            for col in 0..<self.numberOfColumns {
-                let tile = self.tileDefinition(atColumn: col, row: row)
-                
-                if tile != nil, tile?.userData?["noPhysics"] == nil { // Tile com física
-                    let tilePosition = self.centerOfTile(atColumn: col, row: row)
-                    
-                    let node = SKSpriteNode(color: .clear, size: self.tileSize)
-                    node.position = tilePosition
-                    
-                    let tileBody = SKPhysicsBody(rectangleOf: self.tileSize)
-                    tileBody.isDynamic = false // Para tornar o tile estático
-                    
-                    node.physicsBody = tileBody
-                    
-                    self.addChild(node)
-                    
-                    #if DEBUG
-                    node.color = .red
-                    node.alpha = 0.2
-                    #endif
-                }
-            }
-        }
-    }
-    
+
     func factoryTiles(entityManager: SKEntityManager) {
         for row in 0..<self.numberOfRows {
             for col in 0..<self.numberOfColumns {

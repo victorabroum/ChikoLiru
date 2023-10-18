@@ -28,7 +28,8 @@ public class PlayerEntity: GKEntity {
         self.addComponent(GKSKNodeComponent(node: node))
 
         // Physics
-        let body = SKPhysicsBody(circleOfRadius: size.width/2)
+        let body = SKPhysicsBody(rectangleOf: .init(width: size.width/2,
+                                                    height: size.height))
         body.allowsRotation = false
         self.addComponent(PhysicsComponent(body: body))
         
@@ -39,7 +40,7 @@ public class PlayerEntity: GKEntity {
         machineComp.machine.enter(PlayerIdle.self)
         self.addComponent(machineComp)
         
-        self.addComponent(JumpComponent(force: 12))
+        self.addComponent(JumpComponent(force: 9))
         
         let animationComp = AnimationComponent(idleState: PlayerIdle.self, walkState: PlayerWalk.self)
         self.addComponent(animationComp)

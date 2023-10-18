@@ -58,7 +58,7 @@ public class JumpComponent: GKComponent {
         guard let playerNode else { return true }
         let playerHeight = playerNode.calculateAccumulatedFrame().size.height
         let rayDistance = CGPoint(x: playerNode.position.x,
-                                y: playerNode.position.y - (playerHeight/2))
+                                y: playerNode.position.y - (playerHeight/2) - 2)
         
         var check = false
         
