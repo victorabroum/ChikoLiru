@@ -16,7 +16,10 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            SpriteView(scene: gameScene, debugOptions: [.showsPhysics])
+            SpriteView(scene: gameScene, debugOptions: [
+                .showsPhysics,
+                .showsNodeCount
+            ])
                 .ignoresSafeArea()
             ControlsView(playerInput: gameScene)
         }

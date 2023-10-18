@@ -37,14 +37,15 @@ public class GameScene: SKScene, PlayerInputDelegate {
         player = p
         entityManager?.add(entity: p)
         
-        setupGround()
+        setupScenario()
     }
     
-    private func setupGround() {
-        let node = SKSpriteNode(color: .brown, size: .init(width: 16*10, height: 16))
-        node.position.y -= 16*5
-        let groundEntiy = GroundEntity(node: node)
-        entityManager?.add(entity: groundEntiy)
+    private func setupScenario() {
+        guard let entityManager else { return }
+        let scenarioEntity = ScenarioEntity(
+            named: "Scenario",
+            entityManager: entityManager)
+        entityManager.add(entity: scenarioEntity)
     }
     
     func doJump() {

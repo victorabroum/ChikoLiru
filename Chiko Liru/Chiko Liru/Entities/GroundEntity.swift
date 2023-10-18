@@ -18,7 +18,7 @@ public class GroundEntity: GKEntity {
         
         let body = SKPhysicsBody(rectangleOf: node.calculateAccumulatedFrame().size)
         body.affectedByGravity = false
-        body.pinned = true
+        body.isDynamic = false
         body.allowsRotation = false
         self.addComponent(PhysicsComponent(body: body))
         

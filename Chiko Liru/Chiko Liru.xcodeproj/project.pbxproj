@@ -28,6 +28,10 @@
 		760CE9102ADEB0E600F3749D /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CE90F2ADEB0E600F3749D /* MovementComponent.swift */; };
 		766BAE912ADF078500AC3878 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE902ADF078500AC3878 /* AnimationComponent.swift */; };
 		766BAE932AE0492D00AC3878 /* IsGroundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE922AE0492D00AC3878 /* IsGroundComponent.swift */; };
+		766BAE9A2AE056A500AC3878 /* Scenario.sks in Resources */ = {isa = PBXBuildFile; fileRef = 766BAE992AE056A500AC3878 /* Scenario.sks */; };
+		766BAE9C2AE0592500AC3878 /* ScenarioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE9B2AE0592500AC3878 /* ScenarioEntity.swift */; };
+		766BAE9E2AE05AD400AC3878 /* ScenarioTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 766BAE9D2AE05AD400AC3878 /* ScenarioTileSet.sks */; };
+		76A4D9A82AE05CE300EB98AD /* SKTileNode+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +57,10 @@
 		760CE90F2ADEB0E600F3749D /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		766BAE902ADF078500AC3878 /* AnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
 		766BAE922AE0492D00AC3878 /* IsGroundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsGroundComponent.swift; sourceTree = "<group>"; };
+		766BAE992AE056A500AC3878 /* Scenario.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scenario.sks; sourceTree = "<group>"; };
+		766BAE9B2AE0592500AC3878 /* ScenarioEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioEntity.swift; sourceTree = "<group>"; };
+		766BAE9D2AE05AD400AC3878 /* ScenarioTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScenarioTileSet.sks; sourceTree = "<group>"; };
+		76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileNode+Tools.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,7 @@
 		760CE8B82AD7439900F3749D /* Chiko Liru */ = {
 			isa = PBXGroup;
 			children = (
+				766BAE942AE0555400AC3878 /* Assets */,
 				760CE90A2ADEA9FB00F3749D /* ViewModifier */,
 				760CE9052ADEA13100F3749D /* View */,
 				760CE9022ADEA0BA00F3749D /* Model */,
@@ -94,7 +103,6 @@
 				760CE8CA2AD7472100F3749D /* Extensions */,
 				760CE8C72AD743C800F3749D /* Scenes */,
 				760CE8B92AD7439900F3749D /* Chiko_LiruApp.swift */,
-				760CE8BD2AD7439B00F3749D /* Assets.xcassets */,
 				760CE8BF2AD7439B00F3749D /* Preview Content */,
 			);
 			path = "Chiko Liru";
@@ -112,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				760CE8C82AD743DC00F3749D /* GameScene.swift */,
+				766BAE992AE056A500AC3878 /* Scenario.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -121,6 +130,7 @@
 			children = (
 				760CE8ED2ADDBBAC00F3749D /* SKTexture+Array.swift */,
 				760CE90D2ADEAB2400F3749D /* View+PressModifier.swift */,
+				76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -131,6 +141,7 @@
 				760CE8F12ADDBE0500F3749D /* SKEntityManager.swift */,
 				760CE8F32ADDBEFD00F3749D /* PlayerEntity.swift */,
 				760CE8FE2ADDC38C00F3749D /* GroundEntity.swift */,
+				766BAE9B2AE0592500AC3878 /* ScenarioEntity.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -180,6 +191,15 @@
 				760CE90B2ADEAA0E00F3749D /* PressAction.swift */,
 			);
 			path = ViewModifier;
+			sourceTree = "<group>";
+		};
+		766BAE942AE0555400AC3878 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				760CE8BD2AD7439B00F3749D /* Assets.xcassets */,
+				766BAE9D2AE05AD400AC3878 /* ScenarioTileSet.sks */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +260,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766BAE9E2AE05AD400AC3878 /* ScenarioTileSet.sks in Resources */,
 				760CE8C12AD7439B00F3749D /* Preview Assets.xcassets in Resources */,
 				760CE8BE2AD7439B00F3749D /* Assets.xcassets in Resources */,
+				766BAE9A2AE056A500AC3878 /* Scenario.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +282,8 @@
 				760CE9072ADEA14700F3749D /* ControlsView.swift in Sources */,
 				760CE9102ADEB0E600F3749D /* MovementComponent.swift in Sources */,
 				760CE90E2ADEAB2400F3749D /* View+PressModifier.swift in Sources */,
+				766BAE9C2AE0592500AC3878 /* ScenarioEntity.swift in Sources */,
+				76A4D9A82AE05CE300EB98AD /* SKTileNode+Tools.swift in Sources */,
 				760CE8FF2ADDC38C00F3749D /* GroundEntity.swift in Sources */,
 				760CE90C2ADEAA0E00F3749D /* PressAction.swift in Sources */,
 				760CE9092ADEA7F600F3749D /* InputButton.swift in Sources */,
