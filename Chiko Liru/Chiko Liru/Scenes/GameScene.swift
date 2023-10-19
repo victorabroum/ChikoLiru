@@ -51,10 +51,18 @@ public class GameScene: SKScene, PlayerInputDelegate {
         self.addChild(cam)
         self.camera = cam
         
-        let range = SKRange(lowerLimit: 0, upperLimit: self.size.width/2)
-        let constraint = SKConstraint.distance(range, to: self)
-        cam.constraints = [constraint]
+        let totalWidth: CGFloat = 70 * 16
+        let targetWidth = totalWidth/2 - self.size.width/2
+        let range = SKRange(lowerLimit: -targetWidth, upperLimit: targetWidth)
+        let constraintX = SKConstraint.positionX(range)
         
+        let totalHeight: CGFloat = 16 * 28
+        let targetHeight = totalHeight/2 - self.size.height/2
+        let constraintY = SKConstraint.positionY(.init(
+            lowerLimit: -targetHeight,
+            upperLimit: targetHeight))
+        cam.constraints = [constraintX, constraintY]
+    
         return cam
     }
     
