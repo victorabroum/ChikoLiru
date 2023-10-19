@@ -51,7 +51,7 @@ public class GameScene: SKScene, PlayerInputDelegate {
         self.addChild(cam)
         self.camera = cam
         
-        let totalWidth: CGFloat = 70 * 16
+        let totalWidth: CGFloat = 16 * 200
         let targetWidth = totalWidth/2 - self.size.width/2
         let range = SKRange(lowerLimit: -targetWidth, upperLimit: targetWidth)
         let constraintX = SKConstraint.positionX(range)
@@ -68,6 +68,9 @@ public class GameScene: SKScene, PlayerInputDelegate {
     
     private func setupScenario() {
         guard let entityManager else { return }
+        
+        TileSetManager.shared.loadScenarioData(named: "Level 1")
+        
         let scenarioEntity = ScenarioEntity(
             named: "Scenario",
             entityManager: entityManager)

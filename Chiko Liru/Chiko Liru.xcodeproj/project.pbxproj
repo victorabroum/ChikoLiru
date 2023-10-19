@@ -34,6 +34,11 @@
 		76A4D9A82AE05CE300EB98AD /* SKTileNode+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */; };
 		76A4D9AA2AE07D7300EB98AD /* CameraFollowComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9A92AE07D7300EB98AD /* CameraFollowComponent.swift */; };
 		76A4D9AC2AE0815C00EB98AD /* CGPath+Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9AB2AE0815C00EB98AD /* CGPath+Primitives.swift */; };
+		76A4D9AF2AE1A8F100EB98AD /* TileSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9AE2AE1A8F100EB98AD /* TileSetData.swift */; };
+		76A4D9B12AE1A9F200EB98AD /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9B02AE1A9F200EB98AD /* LevelData.swift */; };
+		76A4D9B42AE1AADC00EB98AD /* Level 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B22AE1AADC00EB98AD /* Level 1.json */; };
+		76A4D9B52AE1AADC00EB98AD /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B32AE1AADC00EB98AD /* Ground.json */; };
+		76A4D9B72AE1AB0F00EB98AD /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +70,11 @@
 		76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileNode+Tools.swift"; sourceTree = "<group>"; };
 		76A4D9A92AE07D7300EB98AD /* CameraFollowComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraFollowComponent.swift; sourceTree = "<group>"; };
 		76A4D9AB2AE0815C00EB98AD /* CGPath+Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath+Primitives.swift"; sourceTree = "<group>"; };
+		76A4D9AE2AE1A8F100EB98AD /* TileSetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSetData.swift; sourceTree = "<group>"; };
+		76A4D9B02AE1A9F200EB98AD /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
+		76A4D9B22AE1AADC00EB98AD /* Level 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Level 1.json"; sourceTree = "<group>"; };
+		76A4D9B32AE1AADC00EB98AD /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
+		76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +186,7 @@
 		760CE9022ADEA0BA00F3749D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				76A4D9AD2AE1A8DA00EB98AD /* Scenario */,
 				760CE9032ADEA0C600F3749D /* PlayerInput.swift */,
 			);
 			path = Model;
@@ -206,6 +217,18 @@
 				766BAE9D2AE05AD400AC3878 /* ScenarioTileSet.sks */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		76A4D9AD2AE1A8DA00EB98AD /* Scenario */ = {
+			isa = PBXGroup;
+			children = (
+				76A4D9B32AE1AADC00EB98AD /* Ground.json */,
+				76A4D9B22AE1AADC00EB98AD /* Level 1.json */,
+				76A4D9AE2AE1A8F100EB98AD /* TileSetData.swift */,
+				76A4D9B02AE1A9F200EB98AD /* LevelData.swift */,
+				76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */,
+			);
+			path = Scenario;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,7 +289,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A4D9B52AE1AADC00EB98AD /* Ground.json in Resources */,
 				766BAE9E2AE05AD400AC3878 /* ScenarioTileSet.sks in Resources */,
+				76A4D9B42AE1AADC00EB98AD /* Level 1.json in Resources */,
 				760CE8C12AD7439B00F3749D /* Preview Assets.xcassets in Resources */,
 				760CE8BE2AD7439B00F3749D /* Assets.xcassets in Resources */,
 				766BAE9A2AE056A500AC3878 /* Scenario.sks in Resources */,
@@ -280,7 +305,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A4D9AF2AE1A8F100EB98AD /* TileSetData.swift in Sources */,
 				760CE8F72ADDC01D00F3749D /* Player Animation States.swift in Sources */,
+				76A4D9B12AE1A9F200EB98AD /* LevelData.swift in Sources */,
 				76A4D9AC2AE0815C00EB98AD /* CGPath+Primitives.swift in Sources */,
 				766BAE932AE0492D00AC3878 /* IsGroundComponent.swift in Sources */,
 				760CE8C92AD743DC00F3749D /* GameScene.swift in Sources */,
@@ -290,6 +317,7 @@
 				760CE9072ADEA14700F3749D /* ControlsView.swift in Sources */,
 				760CE9102ADEB0E600F3749D /* MovementComponent.swift in Sources */,
 				760CE90E2ADEAB2400F3749D /* View+PressModifier.swift in Sources */,
+				76A4D9B72AE1AB0F00EB98AD /* TileSetManager.swift in Sources */,
 				766BAE9C2AE0592500AC3878 /* ScenarioEntity.swift in Sources */,
 				76A4D9A82AE05CE300EB98AD /* SKTileNode+Tools.swift in Sources */,
 				760CE8FF2ADDC38C00F3749D /* GroundEntity.swift in Sources */,

@@ -39,7 +39,6 @@ extension SKTileMapNode {
                     // Create Ground Entity
                     let groundEntity = GroundEntity(node: node)
                     entityManager.add(entity: groundEntity)
-                    print("Ground")
                 default:
                     break
                 }
