@@ -18,7 +18,7 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: MovementComponent.self)
     }
     
-    public init(position: CGPoint) {
+    public init(position: CGPoint, cameraNode: SKCameraNode) {
         super.init()
         
         let node = SKSpriteNode(imageNamed: "chiko_idle1")
@@ -28,8 +28,11 @@ public class PlayerEntity: GKEntity {
         self.addComponent(GKSKNodeComponent(node: node))
 
         // Physics
-        let body = SKPhysicsBody(rectangleOf: .init(width: size.width/2,
-                                                    height: size.height))
+        
+        let body = SKPhysicsBody(polygonFrom: .capsule(
+            size: .init(width: size.width/2, height: size.height),
+            cornerRadius: 5,
+            originOffset: .init(x: 0, y: 2.5)))
         body.allowsRotation = false
         self.addComponent(PhysicsComponent(body: body))
         
@@ -46,6 +49,8 @@ public class PlayerEntity: GKEntity {
         self.addComponent(animationComp)
 
         self.addComponent(MovementComponent(speed: 75))
+        
+        self.addComponent(CameraFollowComponent(cameraNode: cameraNode))
     }
     
     required init?(coder: NSCoder) {

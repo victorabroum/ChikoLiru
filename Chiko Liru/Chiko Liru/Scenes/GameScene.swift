@@ -33,11 +33,29 @@ public class GameScene: SKScene, PlayerInputDelegate {
     public override func sceneDidLoad() {
         entityManager = SKEntityManager(scene: self)
     
-        let p = PlayerEntity(position: .zero)
+        let camera = setupCamera()
+        
+        let p = PlayerEntity(position: .zero, cameraNode: camera)
         player = p
         entityManager?.add(entity: p)
         
         setupScenario()
+        
+        let capsule = SKShapeNode(path: .capsule(size: .init(width: 16, height: 32), cornerRadius: 5))
+        capsule.fillColor = .red
+        self.addChild(capsule)
+    }
+    
+    private func setupCamera() -> SKCameraNode {
+        let cam = SKCameraNode()
+        self.addChild(cam)
+        self.camera = cam
+        
+        let range = SKRange(lowerLimit: 0, upperLimit: self.size.width/2)
+        let constraint = SKConstraint.distance(range, to: self)
+        cam.constraints = [constraint]
+        
+        return cam
     }
     
     private func setupScenario() {
