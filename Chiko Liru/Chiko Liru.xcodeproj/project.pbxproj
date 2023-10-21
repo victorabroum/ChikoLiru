@@ -36,9 +36,9 @@
 		76A4D9AC2AE0815C00EB98AD /* CGPath+Primitives.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9AB2AE0815C00EB98AD /* CGPath+Primitives.swift */; };
 		76A4D9AF2AE1A8F100EB98AD /* TileSetData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9AE2AE1A8F100EB98AD /* TileSetData.swift */; };
 		76A4D9B12AE1A9F200EB98AD /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9B02AE1A9F200EB98AD /* LevelData.swift */; };
-		76A4D9B42AE1AADC00EB98AD /* Level 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B22AE1AADC00EB98AD /* Level 1.json */; };
 		76A4D9B52AE1AADC00EB98AD /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B32AE1AADC00EB98AD /* Ground.json */; };
 		76A4D9B72AE1AB0F00EB98AD /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */; };
+		76A4D9B92AE1D20000EB98AD /* Level 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B82AE1D20000EB98AD /* Level 1.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,9 +72,9 @@
 		76A4D9AB2AE0815C00EB98AD /* CGPath+Primitives.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPath+Primitives.swift"; sourceTree = "<group>"; };
 		76A4D9AE2AE1A8F100EB98AD /* TileSetData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSetData.swift; sourceTree = "<group>"; };
 		76A4D9B02AE1A9F200EB98AD /* LevelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelData.swift; sourceTree = "<group>"; };
-		76A4D9B22AE1AADC00EB98AD /* Level 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Level 1.json"; sourceTree = "<group>"; };
 		76A4D9B32AE1AADC00EB98AD /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
 		76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
+		76A4D9B82AE1D20000EB98AD /* Level 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Level 1.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				76A4D9B32AE1AADC00EB98AD /* Ground.json */,
-				76A4D9B22AE1AADC00EB98AD /* Level 1.json */,
+				76A4D9B82AE1D20000EB98AD /* Level 1.json */,
 				76A4D9AE2AE1A8F100EB98AD /* TileSetData.swift */,
 				76A4D9B02AE1A9F200EB98AD /* LevelData.swift */,
 				76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */,
@@ -290,8 +290,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A4D9B52AE1AADC00EB98AD /* Ground.json in Resources */,
+				76A4D9B92AE1D20000EB98AD /* Level 1.json in Resources */,
 				766BAE9E2AE05AD400AC3878 /* ScenarioTileSet.sks in Resources */,
-				76A4D9B42AE1AADC00EB98AD /* Level 1.json in Resources */,
 				760CE8C12AD7439B00F3749D /* Preview Assets.xcassets in Resources */,
 				760CE8BE2AD7439B00F3749D /* Assets.xcassets in Resources */,
 				766BAE9A2AE056A500AC3878 /* Scenario.sks in Resources */,

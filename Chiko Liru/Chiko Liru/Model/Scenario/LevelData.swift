@@ -9,6 +9,11 @@ import Foundation
 
 public struct LevelData: Codable {
     let layers: [LayerData]
+    let tilewidth: Int
+    let tileheight: Int
+    var tileSize: CGSize {
+        return .init(width: tilewidth, height: tileheight)
+    }
 }
 
 public struct LayerData: Codable {

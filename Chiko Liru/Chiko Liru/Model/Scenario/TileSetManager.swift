@@ -32,16 +32,18 @@ public class TileSetManager {
         return nil
     }
     
-    public func loadScenarioData(named: String) {
+    public func loadScenarioData(named: String) -> LevelData? {
         if let path = Bundle.main.path(forResource: named, ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 
                 let levelData = try JSONDecoder().decode(LevelData.self, from: data)
-                
+                return levelData
             } catch {
                 print(error)
+                return nil
             }
         }
+        return nil
     }
 }

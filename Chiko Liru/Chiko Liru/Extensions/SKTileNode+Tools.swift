@@ -8,41 +8,78 @@
 import Foundation
 import SpriteKit
 
-enum TileType: Int {
-    case ground = 1
+enum TileType: String {
+    case ground = "ground"
 }
 
 extension SKTileMapNode {
+    
+    static func createTileMapNode(fromJSON named: String, entityManager: SKEntityManager) -> SKNode? {
+        let node = SKNode()
+                
+        guard let levelData = TileSetManager.shared.loadScenarioData(named: named) else { return nil }
 
-    func factoryTiles(entityManager: SKEntityManager) {
-        for row in 0..<self.numberOfRows {
-            for col in 0..<self.numberOfColumns {
-                let tile = self.tileDefinition(atColumn: col, row: row)
+        for layer in levelData.layers {
+            
+            guard !layer.name.contains("prototype") else { continue }
+            
+            let mapNode = SKTileMapNode(tileSet: .init(), columns: layer.width, rows: layer.height, tileSize: levelData.tileSize)
+            mapNode.enableAutomapping = false
+            
+            var col = 0
+            var row = 0
+            
+            for (i, tileId) in layer.data.enumerated() {
+                let mappedId = tileId - 1
+                guard mappedId >= 0 else { continue }
                 
-                guard let tileData = tile?.userData?.value(forKey: "type") as? Int else {
-                    continue
-                }
+                guard let tileDef = TileSetManager.shared.groundSetData?.getTileDefinition(at: mappedId) else { continue }
                 
-                let tilePosition = self.centerOfTile(atColumn: col, row: row)
+                let group = SKTileGroup(tileDefinition: tileDef)
+                mapNode.tileSet.tileGroups.append(group)
                 
-                let node = SKSpriteNode(color: .clear, size: self.tileSize)
-                node.position = tilePosition
+                col = i % layer.width
+                row = layer.height - (i / layer.width)
                 
-                #if DEBUG
-                node.zPosition = 5
-                node.color = .red
-                node.alpha = 0.2
-                #endif
+                mapNode.setTileGroup(group, forColumn: col, row: row)
                 
-                switch tileData {
-                case TileType.ground.rawValue:
-                    // Create Ground Entity
-                    let groundEntity = GroundEntity(node: node)
-                    entityManager.add(entity: groundEntity)
-                default:
-                    break
-                }
+                // Factory Entities
+                let tilePosition = mapNode.centerOfTile(atColumn: col, row: row)
+                factoryTiles(entityManager: entityManager,
+                             tileDefinition: tileDef,
+                             tilePosition: tilePosition,
+                             tileSize: levelData.tileSize)
             }
+            node.addChild(mapNode)
+        }
+        
+        return node
+    }
+    
+    static func factoryTiles(entityManager: SKEntityManager, 
+                             tileDefinition: SKTileDefinition,
+                             tilePosition: CGPoint,
+                             tileSize: CGSize) {
+        guard let tileData = tileDefinition.userData?.value(forKey: "type") as? String else {
+            return
+        }
+        
+        let node = SKSpriteNode(color: .clear, size: tileSize)
+        node.position = tilePosition
+        
+        #if DEBUG
+        node.zPosition = 5
+        node.color = .red
+        node.alpha = 0.2
+        #endif
+        
+        switch tileData {
+        case TileType.ground.rawValue:
+            // Create Ground Entity
+            let groundEntity = GroundEntity(node: node)
+            entityManager.add(entity: groundEntity)
+        default:
+            break
         }
     }
     

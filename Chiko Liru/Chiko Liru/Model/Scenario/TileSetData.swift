@@ -6,21 +6,7 @@
 //
 
 import Foundation
-
-// Example
-//{
-// "id":61,
-// "image":"none_tile.png",
-// "imageheight":16,
-// "imagewidth":16,
-// "properties":[
-//        {
-//         "name":"name",
-//         "type":"string",
-//         "value":"air"
-//        }],
-// "type":"air"
-//}
+import SpriteKit
 
 public struct TileSetData: Codable {
     var name: String
@@ -31,6 +17,35 @@ public struct TileSetData: Codable {
             guard index >= 0 && index < tiles.count else { return nil }
             return tiles[index]
         }
+    }
+    
+    func getTileDefinition(at: Int) -> SKTileDefinition? {
+        guard at >= 0 && at < tiles.count else { return nil }
+        guard let tile = self[at] else { return nil }
+        let texture = SKTexture(imageNamed: tile.getImageNamed())
+        let tileDef = SKTileDefinition(texture: texture)
+        tileDef.userData = tile.userData
+        
+        return tileDef
+    }
+    
+    func getSKTileSet(fromIds ids: [Int]) -> SKTileSet {
+        
+        var done = Set<Int>()
+        var groups: [SKTileGroup] = []
+        
+        for id in ids {
+            if(done.contains(id)) { continue }
+            
+            if let tileDef = getTileDefinition(at: id) {
+                let group = SKTileGroup(tileDefinition: tileDef)
+                groups.append(group)
+            }
+            
+            done.insert(id)
+        }
+
+        return SKTileSet(tileGroups: groups)
     }
 }
 
@@ -49,6 +64,15 @@ public struct Tile: Codable {
             return String(result.prefix(upTo: dotRange.lowerBound))
         }
         
+        return result
+    }
+    
+    var userData: NSMutableDictionary? {
+        guard let properties else { return nil }
+        let result: NSMutableDictionary = [:]
+        for property in properties {
+            result[property.name] = property.value
+        }
         return result
     }
 }

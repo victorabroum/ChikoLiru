@@ -20,7 +20,7 @@ struct ContentView: View {
                 .showsPhysics,
                 .showsNodeCount
             ])
-                .ignoresSafeArea()
+            .ignoresSafeArea()
             ControlsView(playerInput: gameScene)
         }
     }

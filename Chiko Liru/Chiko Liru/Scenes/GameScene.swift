@@ -9,16 +9,13 @@ import Foundation
 import SpriteKit
 
 public class GameScene: SKScene, PlayerInputDelegate {
-    func change(direction: MoveDirection) {
-        self.player?.moveComponent?.direciton = direction
-    }
-    
-
     public var entityManager: SKEntityManager?
     
     private weak var player: PlayerEntity?
     
     private var lastUpdatedTime: TimeInterval = 0
+    
+    private var levelName: String = "Level 1"
     
     public override init() {
         super.init(size: .init(width: 1920/4, height: 1080/4))
@@ -47,38 +44,34 @@ public class GameScene: SKScene, PlayerInputDelegate {
     }
     
     private func setupCamera() -> SKCameraNode {
+        
+        let levelData = TileSetManager.shared.loadScenarioData(named: levelName)
+        
         let cam = SKCameraNode()
         self.addChild(cam)
         self.camera = cam
         
-        let totalWidth: CGFloat = 16 * 200
+        let totalWidth: CGFloat = 16 * CGFloat(levelData?.layers[1].width ?? 100)
         let targetWidth = totalWidth/2 - self.size.width/2
         let range = SKRange(lowerLimit: -targetWidth, upperLimit: targetWidth)
         let constraintX = SKConstraint.positionX(range)
         
-        let totalHeight: CGFloat = 16 * 28
+        let totalHeight: CGFloat = 16 * (CGFloat(levelData?.layers[1].height ?? 28) - 1)
         let targetHeight = totalHeight/2 - self.size.height/2
         let constraintY = SKConstraint.positionY(.init(
             lowerLimit: -targetHeight,
             upperLimit: targetHeight))
         cam.constraints = [constraintX, constraintY]
-    
         return cam
     }
     
     private func setupScenario() {
         guard let entityManager else { return }
         
-        TileSetManager.shared.loadScenarioData(named: "Level 1")
-        
         let scenarioEntity = ScenarioEntity(
-            named: "Scenario",
+            named: levelName,
             entityManager: entityManager)
         entityManager.add(entity: scenarioEntity)
-    }
-    
-    func doJump() {
-        player?.jumpComp?.jump()
     }
     
     public override func update(_ currentTime: TimeInterval) {
@@ -92,4 +85,13 @@ public class GameScene: SKScene, PlayerInputDelegate {
         
         lastUpdatedTime = currentTime
     }
+    
+    func doJump() {
+        player?.jumpComp?.jump()
+    }
+    
+    func change(direction: MoveDirection) {
+        self.player?.moveComponent?.direciton = direction
+    }
+    
 }
