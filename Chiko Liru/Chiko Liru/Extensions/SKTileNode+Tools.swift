@@ -15,10 +15,15 @@ enum TileType: String {
 extension SKTileMapNode {
     
     static func createTileMapNode(fromJSON named: String, entityManager: SKEntityManager) -> SKNode? {
+        
+        guard let levelData = TileSetManager.shared.loadScenarioData(named: named) else { return nil }
+        
+        return createTileMapNode(fromLevelData: levelData, entityManager: entityManager)
+    }
+    
+    static func createTileMapNode(fromLevelData levelData: LevelData, entityManager: SKEntityManager) -> SKNode? {
         let node = SKNode()
                 
-        guard let levelData = TileSetManager.shared.loadScenarioData(named: named) else { return nil }
-
         for layer in levelData.layers {
             
             guard !layer.name.contains("prototype") else { continue }

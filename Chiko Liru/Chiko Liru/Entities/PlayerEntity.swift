@@ -30,9 +30,9 @@ public class PlayerEntity: GKEntity {
         // Physics
         
         let body = SKPhysicsBody(polygonFrom: .capsule(
-            size: .init(width: size.width/2, height: size.height),
+            size: .init(width: size.width/2, height: size.height - 4),
             cornerRadius: 5,
-            originOffset: .init(x: 0, y: 2.5)))
+            originOffset: .init(x: 0, y: 0)))
         body.allowsRotation = false
         self.addComponent(PhysicsComponent(body: body))
         

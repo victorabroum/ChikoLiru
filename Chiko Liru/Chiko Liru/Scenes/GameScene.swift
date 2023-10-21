@@ -37,10 +37,6 @@ public class GameScene: SKScene, PlayerInputDelegate {
         entityManager?.add(entity: p)
         
         setupScenario()
-        
-        let capsule = SKShapeNode(path: .capsule(size: .init(width: 16, height: 32), cornerRadius: 5))
-        capsule.fillColor = .red
-        self.addChild(capsule)
     }
     
     private func setupCamera() -> SKCameraNode {
