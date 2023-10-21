@@ -37,4 +37,10 @@ public class SKEntityManager {
             entity.update(deltaTime: time)
         }
     }
+    
+    public func first(withComponent component: GKComponent.Type) -> GKEntity? {
+        return entities.first { entity in
+            return entity.component(ofType: component) != nil
+        }
+    }
 }

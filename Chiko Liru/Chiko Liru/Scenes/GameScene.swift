@@ -15,7 +15,7 @@ public class GameScene: SKScene, PlayerInputDelegate {
     
     private var lastUpdatedTime: TimeInterval = 0
     
-    private var levelName: String = "Level 1"
+    private var levelData = TileSetManager.shared.loadScenarioData(named: "Level 1")
     
     public override init() {
         super.init(size: .init(width: 1920/4, height: 1080/4))
@@ -30,19 +30,14 @@ public class GameScene: SKScene, PlayerInputDelegate {
     public override func sceneDidLoad() {
         entityManager = SKEntityManager(scene: self)
     
-        let camera = setupCamera()
-        
-        let p = PlayerEntity(position: .zero, cameraNode: camera)
-        player = p
-        entityManager?.add(entity: p)
-        
         setupScenario()
+        setupCamera()
+        
+        player = entityManager?.first(withComponent: IsPlayerComponent.self) as? PlayerEntity
+        player?.setFollowCamera(self.camera!)
     }
     
-    private func setupCamera() -> SKCameraNode {
-        
-        let levelData = TileSetManager.shared.loadScenarioData(named: levelName)
-        
+    private func setupCamera() {
         let cam = SKCameraNode()
         self.addChild(cam)
         self.camera = cam
@@ -58,14 +53,13 @@ public class GameScene: SKScene, PlayerInputDelegate {
             lowerLimit: -targetHeight,
             upperLimit: targetHeight))
         cam.constraints = [constraintX, constraintY]
-        return cam
     }
     
     private func setupScenario() {
-        guard let entityManager else { return }
+        guard let entityManager, let levelData else { return }
         
         let scenarioEntity = ScenarioEntity(
-            named: levelName,
+            levelData: levelData,
             entityManager: entityManager)
         entityManager.add(entity: scenarioEntity)
     }

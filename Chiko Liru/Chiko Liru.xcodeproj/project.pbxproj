@@ -39,6 +39,7 @@
 		76A4D9B52AE1AADC00EB98AD /* Ground.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B32AE1AADC00EB98AD /* Ground.json */; };
 		76A4D9B72AE1AB0F00EB98AD /* TileSetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */; };
 		76A4D9B92AE1D20000EB98AD /* Level 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 76A4D9B82AE1D20000EB98AD /* Level 1.json */; };
+		76A4D9BF2AE372EE00EB98AD /* IsPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9BE2AE372EE00EB98AD /* IsPlayerComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		76A4D9B32AE1AADC00EB98AD /* Ground.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Ground.json; sourceTree = "<group>"; };
 		76A4D9B62AE1AB0F00EB98AD /* TileSetManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSetManager.swift; sourceTree = "<group>"; };
 		76A4D9B82AE1D20000EB98AD /* Level 1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Level 1.json"; sourceTree = "<group>"; };
+		76A4D9BE2AE372EE00EB98AD /* IsPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPlayerComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				766BAE902ADF078500AC3878 /* AnimationComponent.swift */,
 				766BAE922AE0492D00AC3878 /* IsGroundComponent.swift */,
 				76A4D9A92AE07D7300EB98AD /* CameraFollowComponent.swift */,
+				76A4D9BE2AE372EE00EB98AD /* IsPlayerComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				760CE8F42ADDBEFD00F3749D /* PlayerEntity.swift in Sources */,
 				760CE8F22ADDBE0500F3749D /* SKEntityManager.swift in Sources */,
 				760CE8BA2AD7439900F3749D /* Chiko_LiruApp.swift in Sources */,
+				76A4D9BF2AE372EE00EB98AD /* IsPlayerComponent.swift in Sources */,
 				760CE8F92ADDC12900F3749D /* StateMachineComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

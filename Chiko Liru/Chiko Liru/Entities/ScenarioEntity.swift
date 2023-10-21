@@ -11,10 +11,10 @@ import SpriteKit
 
 public class ScenarioEntity: GKEntity {
     
-    public init(named: String, entityManager: SKEntityManager) {
+    public init(levelData: LevelData, entityManager: SKEntityManager) {
         super.init()
                
-        if let node = SKTileMapNode.createTileMapNode(fromJSON: named, entityManager: entityManager) {
+        if let node = SKTileMapNode.createTileMapNode(fromLevelData: levelData, entityManager: entityManager) {
             self.addComponent(GKSKNodeComponent(node: node))
         }
     }

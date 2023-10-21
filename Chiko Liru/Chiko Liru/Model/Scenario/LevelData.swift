@@ -21,4 +21,15 @@ public struct LayerData: Codable {
     let data: [Int]
     let height: Int
     let width: Int
+    let properties: [LayerProperty]?
+    var isNotRendered: Bool {
+        return properties?.contains(where: { propety in
+            return propety.name == "isNotRendered"
+        }) ?? false
+    }
+}
+
+public struct LayerProperty: Codable {
+    let name: String
+    let value: String
 }

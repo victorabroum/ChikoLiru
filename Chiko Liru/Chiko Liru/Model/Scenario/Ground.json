@@ -8,7 +8,7 @@
  "margin":0,
  "name":"Ground",
  "spacing":0,
- "tilecount":62,
+ "tilecount":64,
  "tiledversion":"1.10.2",
  "tileheight":16,
  "tiles":[
@@ -457,6 +457,30 @@
                  "value":"air"
                 }],
          "type":"air"
+        }, 
+        {
+         "id":62,
+         "image":"..\/..\/..\/..\/..\/..\/2D src\/TileMap\/enemyFlag.png",
+         "imageheight":16,
+         "imagewidth":16,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"enemy"
+                }]
+        }, 
+        {
+         "id":63,
+         "image":"..\/..\/..\/..\/..\/..\/2D src\/TileMap\/playerFlag.png",
+         "imageheight":16,
+         "imagewidth":16,
+         "properties":[
+                {
+                 "name":"type",
+                 "type":"string",
+                 "value":"player"
+                }]
         }],
  "tilewidth":16,
  "type":"tileset",

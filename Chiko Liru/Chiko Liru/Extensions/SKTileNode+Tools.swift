@@ -10,6 +10,7 @@ import SpriteKit
 
 enum TileType: String {
     case ground = "ground"
+    case player = "player"
 }
 
 extension SKTileMapNode {
@@ -40,13 +41,14 @@ extension SKTileMapNode {
                 
                 guard let tileDef = TileSetManager.shared.groundSetData?.getTileDefinition(at: mappedId) else { continue }
                 
-                let group = SKTileGroup(tileDefinition: tileDef)
-                mapNode.tileSet.tileGroups.append(group)
-                
                 col = i % layer.width
                 row = layer.height - (i / layer.width)
                 
-                mapNode.setTileGroup(group, forColumn: col, row: row)
+                if !layer.isNotRendered {
+                    let group = SKTileGroup(tileDefinition: tileDef)
+                    mapNode.tileSet.tileGroups.append(group)
+                    mapNode.setTileGroup(group, forColumn: col, row: row)
+                }
                 
                 // Factory Entities
                 let tilePosition = mapNode.centerOfTile(atColumn: col, row: row)
@@ -68,21 +70,23 @@ extension SKTileMapNode {
         guard let tileData = tileDefinition.userData?.value(forKey: "type") as? String else {
             return
         }
-        
-        let node = SKSpriteNode(color: .clear, size: tileSize)
-        node.position = tilePosition
-        
-        #if DEBUG
-        node.zPosition = 5
-        node.color = .red
-        node.alpha = 0.2
-        #endif
-        
+
         switch tileData {
         case TileType.ground.rawValue:
+            let node = SKSpriteNode(color: .clear, size: tileSize)
+            node.position = tilePosition
+            
+            #if DEBUG
+            node.zPosition = 5
+            node.color = .red
+            node.alpha = 0.2
+            #endif
             // Create Ground Entity
             let groundEntity = GroundEntity(node: node)
             entityManager.add(entity: groundEntity)
+        case TileType.player.rawValue:
+            let player = PlayerEntity(position: tilePosition)
+            entityManager.add(entity: player)
         default:
             break
         }

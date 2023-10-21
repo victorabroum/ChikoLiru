@@ -18,7 +18,7 @@ public class PlayerEntity: GKEntity {
         return self.component(ofType: MovementComponent.self)
     }
     
-    public init(position: CGPoint, cameraNode: SKCameraNode) {
+    public init(position: CGPoint) {
         super.init()
         
         let node = SKSpriteNode(imageNamed: "chiko_idle1")
@@ -49,8 +49,12 @@ public class PlayerEntity: GKEntity {
         self.addComponent(animationComp)
 
         self.addComponent(MovementComponent(speed: 75))
-        
-        self.addComponent(CameraFollowComponent(cameraNode: cameraNode))
+
+        self.addComponent(IsPlayerComponent())
+    }
+    
+    public func setFollowCamera(_ camera: SKCameraNode) {
+        self.addComponent(CameraFollowComponent(cameraNode: camera))
     }
     
     required init?(coder: NSCoder) {
