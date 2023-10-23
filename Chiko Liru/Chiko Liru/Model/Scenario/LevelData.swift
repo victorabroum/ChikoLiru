@@ -22,8 +22,16 @@ public struct LayerData: Codable {
     let height: Int
     let width: Int
     let properties: [LayerProperty]?
-    var isNotRendered: Bool {
-        return properties?.contains(where: { propety in
+    var isNotRendered: Bool
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.data = try container.decode([Int].self, forKey: .data)
+        self.height = try container.decode(Int.self, forKey: .height)
+        self.width = try container.decode(Int.self, forKey: .width)
+        self.properties = try container.decodeIfPresent([LayerProperty].self, forKey: .properties)
+        self.isNotRendered = properties?.contains(where: { propety in
             return propety.name == "isNotRendered"
         }) ?? false
     }
