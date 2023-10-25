@@ -53,6 +53,8 @@ public class GameScene: SKScene, PlayerInputDelegate {
             lowerLimit: -targetHeight,
             upperLimit: targetHeight))
         cam.constraints = [constraintX, constraintY]
+        
+        cam.setScale(3)
     }
     
     private func setupScenario() {

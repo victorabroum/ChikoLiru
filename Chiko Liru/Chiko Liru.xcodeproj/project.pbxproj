@@ -28,7 +28,6 @@
 		760CE9102ADEB0E600F3749D /* MovementComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 760CE90F2ADEB0E600F3749D /* MovementComponent.swift */; };
 		766BAE912ADF078500AC3878 /* AnimationComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE902ADF078500AC3878 /* AnimationComponent.swift */; };
 		766BAE932AE0492D00AC3878 /* IsGroundComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE922AE0492D00AC3878 /* IsGroundComponent.swift */; };
-		766BAE9A2AE056A500AC3878 /* Scenario.sks in Resources */ = {isa = PBXBuildFile; fileRef = 766BAE992AE056A500AC3878 /* Scenario.sks */; };
 		766BAE9C2AE0592500AC3878 /* ScenarioEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766BAE9B2AE0592500AC3878 /* ScenarioEntity.swift */; };
 		766BAE9E2AE05AD400AC3878 /* ScenarioTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 766BAE9D2AE05AD400AC3878 /* ScenarioTileSet.sks */; };
 		76A4D9A82AE05CE300EB98AD /* SKTileNode+Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */; };
@@ -65,7 +64,6 @@
 		760CE90F2ADEB0E600F3749D /* MovementComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementComponent.swift; sourceTree = "<group>"; };
 		766BAE902ADF078500AC3878 /* AnimationComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationComponent.swift; sourceTree = "<group>"; };
 		766BAE922AE0492D00AC3878 /* IsGroundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsGroundComponent.swift; sourceTree = "<group>"; };
-		766BAE992AE056A500AC3878 /* Scenario.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Scenario.sks; sourceTree = "<group>"; };
 		766BAE9B2AE0592500AC3878 /* ScenarioEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScenarioEntity.swift; sourceTree = "<group>"; };
 		766BAE9D2AE05AD400AC3878 /* ScenarioTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ScenarioTileSet.sks; sourceTree = "<group>"; };
 		76A4D9A72AE05CE300EB98AD /* SKTileNode+Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileNode+Tools.swift"; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				760CE8C82AD743DC00F3749D /* GameScene.swift */,
-				766BAE992AE056A500AC3878 /* Scenario.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -297,7 +294,6 @@
 				766BAE9E2AE05AD400AC3878 /* ScenarioTileSet.sks in Resources */,
 				760CE8C12AD7439B00F3749D /* Preview Assets.xcassets in Resources */,
 				760CE8BE2AD7439B00F3749D /* Assets.xcassets in Resources */,
-				766BAE9A2AE056A500AC3878 /* Scenario.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
